@@ -16,26 +16,18 @@
         .nav-links a:hover { color: #1f7b2e; }
 
         section { max-width: 1200px; margin: 0 auto; padding: 55px 20px; }
-        .section-title { text-align: center; font-size: 2.1rem; color: #0f2b0f; margin-bottom: 20px; font-weight: 650; }
+        .section-title { text-align: center; font-size: 2.1rem; color: #0f2b0f; margin-bottom: 35px; font-weight: 650; letter-spacing: -0.3px; }
 
         #home { background: linear-gradient(105deg, #1f7b2e 0%, #3a9f4a 100%); color: white; text-align: center; padding: 80px 20px; border-radius: 0 0 28px 28px; margin-bottom: 20px; }
         #home h1 { font-size: 3rem; font-weight: 700; margin-bottom: 12px; }
         #home p { font-size: 1.3rem; opacity: 0.95; max-width: 700px; margin: 0 auto 30px; }
-        .cta-btn { display: inline-block; background: white; color: #1f7b2e; padding: 12px 34px; text-decoration: none; font-weight: 700; border-radius: 40px; box-shadow: 0 8px 20px rgba(0,0,0,0.12); transition: all 0.2s; font-size: 1.1rem; margin-bottom: 15px; }
-        .cta-btn:hover { transform: translateY(-3px); }
+        .cta-btn { display: inline-block; background: white; color: #1f7b2e; padding: 12px 34px; text-decoration: none; font-weight: 700; border-radius: 40px; box-shadow: 0 8px 20px rgba(0,0,0,0.12); transition: all 0.2s; font-size: 1.1rem; }
+        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 24px rgba(0,0,0,0.15); }
 
-        /* Search Bar Styles */
-        .search-container { max-width: 600px; margin: 0 auto 40px auto; position: relative; }
-        .search-input { width: 100%; padding: 16px 24px; font-size: 1.1rem; border: 2px solid #cbdccb; border-radius: 40px; outline: none; transition: border-color 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .search-input:focus { border-color: #1f7b2e; }
-
-        .category-header { font-size: 1.8rem; color: #1f7b2e; margin: 40px 0 20px; border-bottom: 2px solid #cbdccb; padding-bottom: 10px; display: none; /* Hidden by default until items are found */ }
-        .category-header.active { display: block; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-bottom: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
         .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 22px rgba(0,30,0,0.06); transition: transform 0.15s; padding-bottom: 22px; display: flex; flex-direction: column; }
         .card:hover { transform: translateY(-4px); }
-        .img-placeholder { height: 160px; background: #d9e8d9; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: bold; color: #4e7b4e; overflow: hidden; }
+        .img-placeholder { height: 160px; background: #d9e8d9; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: bold; color: #4e7b4e; letter-spacing: 1px; overflow: hidden; }
         .img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
         .card h3 { margin: 16px 16px 4px; font-size: 1.35rem; font-weight: 650; }
         .price { color: #1f7b2e; font-weight: 700; font-size: 1.2rem; margin: 0 16px 10px; }
@@ -46,23 +38,52 @@
         .whatsapp-btn { background: white; color: #1f7b2e; border: 1px solid #1f7b2e; }
         .whatsapp-btn:hover { background: #f0f7f0; }
 
-        .labour-card { background: #fffde7; border: 2px solid #fbc02d; }
-        .labour-controls { padding: 0 16px; margin-bottom: 15px; display: flex; flex-direction: column; gap: 10px; }
-        .labour-controls label { font-size: 0.9rem; font-weight: 600; color: #5d4037; }
-        .labour-controls input, .labour-controls select { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 8px; }
-        .labour-total { font-size: 1.1rem; font-weight: bold; color: #d32f2f; text-align: center; margin-bottom: 10px; }
+        .admin-panel { background: white; border-radius: 20px; padding: 32px; box-shadow: 0 8px 22px rgba(0,30,0,0.06); margin-bottom: 40px; }
+        .admin-panel h3 { margin-bottom: 18px; color: #1f7b2e; font-size: 1.5rem; }
+        .inline-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; align-items: end; }
+        .form-group { margin-bottom: 12px; display: flex; flex-direction: column; }
+        label { font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; color: #2e4a2e; }
+        input, select, textarea { padding: 10px 12px; border: 1px solid #cbdccb; border-radius: 12px; font-size: 0.95rem; background: #fafefa; transition: 0.15s; }
+        input:focus, select:focus, textarea:focus { outline: 2px solid #8fc99f; border-color: #1f7b2e; }
+        .btn-secondary { background: #2b4a2b; color: white; border: none; padding: 10px 20px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: background 0.15s; }
+        .btn-secondary:hover { background: #1d361d; }
 
         .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; background: white; padding: 36px; border-radius: 22px; box-shadow: 0 8px 22px rgba(0,30,0,0.06); }
-        .info-card h3 { color: #1f7b2e; margin-bottom: 14px; font-size: 1.4rem; }
-        .info-card p { margin-bottom: 10px; color: #2c3e2c; }
-        
-        .qr-box { display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f9fdf9; border-radius: 16px; padding: 18px; margin-top: 14px; border: 1px solid #d8ecd8; }
-        .qr-box img { width: 160px; height: 160px; display: block; border-radius: 12px; }
-        .qr-placeholder { width: 160px; height: 160px; background: #e9f3e9; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: #6b8a6b; text-align: center; padding: 12px; }
-        
+        .info-card h3 { color: #1f7b2e; margin-bottom: 14px; font-size: 1.4rem; display: flex; align-items: center; gap: 8px; }
+        .info-card p { margin-bottom: 10px; color: #2c3e2c; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .payment-badge { background: #e9f3e9; padding: 10px 18px; border-radius: 40px; display: inline-block; font-weight: 700; color: #1f7b2e; margin-top: 16px; font-size: 1.1rem; border: 1px dashed #1f7b2e; }
+        .share-link { display: inline-flex; align-items: center; gap: 6px; background: #1f7b2e; color: white; padding: 10px 22px; border-radius: 40px; text-decoration: none; font-weight: 600; margin-top: 12px; transition: background 0.15s; border: none; cursor: pointer; font-size: 1rem; }
+        .share-link:hover { background: #166321; }
+
         footer { background: #0f1f0f; color: #b8d0b8; text-align: center; padding: 26px; margin-top: 60px; font-size: 0.95rem; }
+
+        @media (max-width: 600px) { #home h1 { font-size: 2.2rem; } .navbar { flex-direction: column; align-items: stretch; } .nav-links { justify-content: center; } .inline-form { grid-template-columns: 1fr; } }
+
         .out-of-stock { opacity: 0.65; filter: grayscale(0.3); }
+        .out-of-stock .stock-badge { background: #f3e1e1; color: #a13e3e; }
         .card .buy-btn.disabled { background: #b0c4b0; pointer-events: none; cursor: not-allowed; }
+        .status-message { font-size: 0.9rem; color: #1f7b2e; margin-top: 8px; font-weight: 600; }
+        .error-msg { color: #b33a3a; }
+
+        .admin-dashboard { display: none; }
+        .admin-dashboard.active { display: block; }
+
+        .btn-small { background: #edf6ed; border: 1px solid #b8d0b8; padding: 6px 12px; border-radius: 40px; font-size: 0.8rem; font-weight: 600; cursor: pointer; color: #1f4a1f; transition: background 0.15s; }
+        .btn-small:hover { background: #d8ecd8; }
+        .btn-danger { background: #f3e1e1; border-color: #d0a8a8; color: #8a3a3a; }
+        .btn-danger:hover { background: #f0d0d0; }
+
+        .product-admin-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; background: #f9fdf9; padding: 12px 18px; border-radius: 20px; margin-bottom: 12px; border: 1px solid #d8ecd8; }
+        .product-admin-row .prod-info { flex: 1; min-width: 140px; }
+        .product-admin-row .prod-info strong { display: block; font-size: 1.05rem; }
+        .product-admin-row .prod-info span { font-size: 0.9rem; color: #4d6b4d; }
+        .product-admin-row input, .product-admin-row select { width: auto; padding: 7px 12px; font-size: 0.9rem; }
+        .product-admin-row .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+        .qr-box { display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f9fdf9; border-radius: 16px; padding: 18px; margin-top: 14px; border: 1px solid #d8ecd8; }
+        .qr-box img { width: 160px; height: 160px; display: block; border-radius: 12px; background: white; padding: 6px; }
+        .qr-box p { margin-top: 10px; font-size: 0.85rem; color: #4d6b4d; text-align: center; }
+        .qr-placeholder { width: 160px; height: 160px; background: #e9f3e9; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: #6b8a6b; text-align: center; padding: 12px; }
     </style>
 </head>
 <body>
@@ -72,67 +93,47 @@
         <a href="#home" class="logo">🌱 SETTI GARI MARKET</a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#products">Shop & Rentals</a></li>
-            <li><a href="#supplier">Contact</a></li>
+            <li><a href="#products">Our Vegetables</a></li>
+            <li><a href="#supplier">Supplier &amp; Address</a></li>
+            <li><a href="#adminSection" id="adminNavLink">Admin</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 </header>
 
 <section id="home">
-    <h1>Setti Gari Market</h1>
-    <p>Vegetables, Meat, Rental Tools & Labour Services. Delivered to your door.</p>
+    <h1>Farm Fresh Vegetables</h1>
+    <p>Organic, handpicked, delivered daily. Order via WhatsApp in one tap.</p>
     <a href="#products" class="cta-btn">Browse Stock</a>
-    <div style="margin-top: 15px; font-size: 1.05rem; font-weight: bold; color: #ffffff; background: rgba(0,0,0,0.25); padding: 10px 20px; border-radius: 30px; display: inline-block;">
-        📍 Delivery available only for Rolugunta mandal and nearest villages only
-    </div>
+     <div style="margin-top: 18px; font-size: 1.05rem; font-weight: bold; color: #ffffff; background: rgba(0,0,0,0.25); padding: 10px 20px; border-radius: 30px; display: inline-block;">
+            📍 Delivery available only for Rolugunta Village and nearest villages only
+        </div>
 </section>
 
 <section id="products">
-    <h2 class="section-title">Our Catalogue</h2>
-
-    <!-- NEW: Search Bar -->
-    <div class="search-container">
-        <input type="text" id="searchBar" class="search-input" placeholder="🔍 Type to search for vegetables, meat, tools...">
-    </div>
-
-    <!-- VEGETABLES -->
-    <h3 class="category-header active" id="header-vegetable">🥦 Vegetables</h3>
-    <div id="grid-vegetable" class="grid"></div>
-
-    <!-- MEAT -->
-    <h3 class="category-header active" id="header-meat">🍗 Meat & Poultry</h3>
-    <div id="grid-meat" class="grid"></div>
-
-    <!-- TOOLS -->
-    <h3 class="category-header active" id="header-tools">🛠️ Work Instruments (For Rent)</h3>
-    <div id="grid-tools" class="grid"></div>
-
-    <!-- LABOUR -->
-    <h3 class="category-header active" id="header-labour">👷 Labour Services</h3>
-    <div id="grid-labour" class="grid"></div>
-    
-    <!-- Empty State Message -->
-    <p id="noResults" style="text-align: center; font-size: 1.2rem; color: #6b8a6b; display: none; margin: 40px 0;">No items found matching your search.</p>
+    <h2 class="section-title">🌽 Today's Fresh Stock</h2>
+    <div id="productGrid" class="grid"></div>
 </section>
 
 <section id="supplier">
-    <h2 class="section-title">🏪 Supplier & Store</h2>
+    <h2 class="section-title">🏪 Supplier &amp; Store</h2>
     <div class="info-grid">
         <div class="info-card">
             <h3>📍 SETTI GARI MARKET</h3>
             <p>7.45/ Naidu gari street, Rolugunta vill,</p>
             <p>Rolugunta mandalam, Anakapalli district, 531114.</p>
             <p>📞 Customer Care: <a href="tel:+918465841278" style="color:#1f7b2e;font-weight:600;">+91 84658 41278</a></p>
-            <p>✉️ Email: <a href="mailto:settigarumart2@gmail.com" style="color:#1f7b2e;font-weight:600;">settigarumart2@gmail.com</a></p>
+            <p>✉️ Email: <a href="mailto:settigarimart@gmail.com" style="color:#1f7b2e;font-weight:600;">settigarimart@gmail.com</a></p>
             <p>⏰ Available daily: 7:00 AM – 7:00 PM</p>
-            <div style="background: #e9f3e9; padding: 10px 18px; border-radius: 40px; display: inline-block; font-weight: 700; color: #1f7b2e; margin-top: 16px; font-size: 1.1rem; border: 1px dashed #1f7b2e;">💵 Cash on Delivery Available</div>
+            <div class="payment-badge">💵 Cash on Delivery Available</div>
         </div>
         <div class="info-card">
-            <h3>📲 Order & Share</h3>
+            <h3>📲 Order &amp; Share</h3>
             <p>Order directly through WhatsApp Business:</p>
-            <a href="#" id="whatsappMainLink" class="buy-btn" style="background:#25a55a; text-decoration:none; display:inline-block; padding: 12px 24px; margin-bottom: 15px;" target="_blank">💬 Order via WhatsApp</a>
-            <p>Share this website with your contacts:</p>
-            <button type="button" id="shareWebsiteLink" class="buy-btn" style="background:#2b4a2b; width:auto; padding: 12px 24px;">📤 Share website</button>
+            <a href="#" id="whatsappMainLink" class="share-link" style="background:#25a55a;" target="_blank" rel="noopener">💬 Order via WhatsApp</a>
+            <p style="margin-top:18px;">Share this website with your contacts:</p>
+            <button type="button" id="shareWebsiteLink" class="share-link" style="background:#2b4a2b;">📤 Share website</button>
+            <p style="margin-top:18px; font-size:0.9rem; color:#4d6b4d;">WhatsApp Business: <strong>+91 84658 41278</strong></p>
         </div>
         <div class="info-card">
             <h3>📱 Scan QR for Website</h3>
@@ -141,8 +142,77 @@
                 <div id="qrContainer">
                     <img id="websiteQR" src="" alt="QR code for website" />
                 </div>
+                <p id="qrCaption">Scan to visit &amp; share</p>
             </div>
         </div>
+    </div>
+</section>
+
+<section id="adminSection">
+    <h2 class="section-title">⚙️ Admin Panel</h2>
+
+    <div id="loginCard" class="admin-panel" style="max-width: 480px; margin: 0 auto; text-align: center;">
+        <h3>🔐 Admin Login</h3>
+        <p style="margin-bottom: 20px; color: #4d6b4d;">Enter password to manage stock, prices, images, and availability.</p>
+        <div class="form-group" style="text-align: left;">
+            <label for="adminPassword">Password</label>
+            <input type="password" id="adminPassword" placeholder="Enter admin password" />
+        </div>
+        <button class="btn-secondary" id="loginBtn" style="width: 100%;">Login</button>
+        <p id="loginMessage" class="status-message error-msg" style="margin-top: 10px;"></p>
+        <p style="margin-top: 16px; font-size: 0.8rem; color: #8aa88a;">(Pass: <strong>******</strong>)</p>
+    </div>
+
+    <div id="adminDashboard" class="admin-dashboard">
+        <div class="admin-panel">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                <h3>➕ Add New Item</h3>
+                <button class="btn-small btn-danger" id="logoutBtn" type="button">🚪 Logout</button>
+            </div>
+            <div class="inline-form" id="addItemForm">
+                <div class="form-group">
+                    <label for="itemName">Item name</label>
+                    <input type="text" id="itemName" placeholder="e.g. Spinach">
+                </div>
+                <div class="form-group">
+                    <label for="itemPrice">Price (₹/kg)</label>
+                    <input type="number" id="itemPrice" step="1" min="1" placeholder="49">
+                </div>
+                <div class="form-group">
+                    <label for="itemEmoji">Emoji / icon</label>
+                    <input type="text" id="itemEmoji" placeholder="🥬" value="🥬" maxlength="4">
+                </div>
+                <div class="form-group">
+                    <label for="itemImage">Image URL (optional)</label>
+                    <input type="url" id="itemImage" placeholder="https://example.com/tomato.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="itemStock">Stock status</label>
+                    <select id="itemStock">
+                        <option value="in">✅ In stock</option>
+                        <option value="out">⛔ Out of stock</option>
+                    </select>
+                </div>
+                <button class="btn-secondary" id="addItemBtn" type="button" style="height: fit-content;">Add item</button>
+            </div>
+            <p id="adminMessage" class="status-message"></p>
+
+            <hr style="margin: 28px 0 24px; border: 0; border-top: 1px solid #d0e0d0;">
+            <h3>🔄 Manage Existing Items</h3>
+            <div id="productAdminList" style="margin-top: 18px;"></div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">📞 Customer Service</h2>
+    <div style="background: white; border-radius: 22px; padding: 32px; text-align: center; box-shadow: 0 8px 22px rgba(0,30,0,0.06);">
+        <p style="font-size: 1.2rem; margin-bottom: 12px;"><strong>We're here to help!</strong></p>
+        <p>📞 Call or WhatsApp: <strong>+91 84658 41278</strong></p>
+        <p>✉️ Email: <strong>settigarimart@gmail.com</strong></p>
+        <p style="margin-top: 18px; background: #e9f3e9; padding: 12px 22px; border-radius: 60px; display: inline-block;">
+            🕒 Available daily: 7:00 AM – 7:00 PM
+        </p>
     </div>
 </section>
 
@@ -154,235 +224,379 @@
 (function () {
     'use strict';
 
+    // ---------------- CONFIG ----------------
     var WHATSAPP_NUMBER = '918465841278';
+    var ADMIN_PASSWORD = 'setti2026';
     var CURRENCY = '₹';
 
+    // ---------------- DATA ----------------
     var products = [
-        // Vegetables
-        { id: 'v1', category: 'vegetable', name: 'Organic Tomatoes', price: 49, emoji: '🍅', stock: 'in', image: '' },
-        { id: 'v2', category: 'vegetable', name: 'Fresh Broccoli', price: 89, emoji: '🥦', stock: 'in', image: '' },
-        { id: 'v3', category: 'vegetable', name: 'Green Chillies', price: 25, emoji: '🌶️', stock: 'in', image: '' },
-        
-        // Meat
-        { id: 'm1', category: 'meat', name: 'Natukode (Country Chicken)', price: 600, emoji: '🐓', stock: 'in', image: '' },
-        { id: 'm2', category: 'meat', name: 'Mutton (Goat)', price: 750, emoji: '🐐', stock: 'in', image: '' },
-        
-        // Tools
-        { id: 't1', category: 'tools', name: 'Crowbar (Rent/hr)', price: 50, emoji: '⚒️', stock: 'in', image: '' },
-        { id: 't2', category: 'tools', name: 'Pick Mattock (Rent/hr)', price: 40, emoji: '⛏️', stock: 'in', image: '' },
-        { id: 't3', category: 'tools', name: 'Shovel (Rent/hr)', price: 30, emoji: '🪏', stock: 'in', image: '' },
-        { id: 't4', category: 'tools', name: 'Rake (Rent/hr)', price: 25, emoji: '🧹', stock: 'in', image: '' },
-        
-        // Labour
-        { id: 'l1', category: 'labour', name: 'Male Labour', price: 100, emoji: '👨‍🌾', stock: 'in', image: '', type: 'male', hourlyRate: 100 },
-        { id: 'l2', category: 'labour', name: 'Female Labour', price: 80, emoji: '👩‍🌾', stock: 'in', image: '', type: 'female', hourlyRate: 80 }
+        { id: 'p1', name: 'Organic Tomatoes', price: 49, emoji: '🍅', stock: 'in', image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400' },
+        { id: 'p2', name: 'Fresh Broccoli',   price: 89, emoji: '🥦', stock: 'out', image: '' },
+        { id: 'p3', name: 'Crunchy Carrots',  price: 39, emoji: '🥕', stock: 'out', image: '' },
+        { id: 'p4', name: 'Baby Spinach',     price: 45, emoji: '🥬', stock: 'in', image: '' },
+        { id: 'p6', name: 'Green Chillies', price: 25, emoji: '🌶️', stock: 'in', image: '' },
+        { id: 'p7', name: 'Natukode (Country Chicken)', price: 600, emoji: '🐓', stock: 'in', image: 'https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=400&q=80' },
+        { id: 'p5', name: 'Bell Peppers',     price: 65, emoji: '🫑', stock: 'out', image: '' }
     ];
 
+    var isAdminLoggedIn = false;
+
+    // ---------------- HELPERS ----------------
     function $(id) { return document.getElementById(id); }
-    function escapeHTML(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
 
-    // ==========================================
-    // RENDER PRODUCTS WITH SEARCH FILTER
-    // ==========================================
-    function renderProducts(searchQuery) {
-        // Convert search to lowercase for matching
-        var query = (searchQuery || '').toLowerCase().trim();
+    function escapeHTML(s) {
+        return String(s).replace(/[&<>"']/g, function (c) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+    }
 
-        // Clear all grids
-        $('grid-vegetable').innerHTML = '';
-        $('grid-meat').innerHTML = '';
-        $('grid-tools').innerHTML = '';
-        $('grid-labour').innerHTML = '';
+    function isPublicUrl(url) {
+        try {
+            var u = new URL(url);
+            if (u.protocol !== 'http:' && u.protocol !== 'https:') return false;
+            var h = u.hostname.toLowerCase();
+            if (!h) return false;
+            if (h === 'localhost' || h === '127.0.0.1' || h === '0.0.0.0' || h === '::1') return false;
+            if (h.endsWith('.local')) return false;
+            if (/^10\./.test(h) || /^192\.168\./.test(h) || /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(h)) return false;
+            return true;
+        } catch (e) { return false; }
+    }
 
-        var hasResults = {
-            vegetable: false,
-            meat: false,
-            tools: false,
-            labour: false
-        };
+    function copyText(text) {
+        return new Promise(function (resolve) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(function () { resolve(true); })
+                    .catch(function () { resolve(legacyCopy(text)); });
+            } else {
+                resolve(legacyCopy(text));
+            }
+        });
+    }
 
-        var totalVisible = 0;
+    function legacyCopy(text) {
+        try {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.top = '-1000px';
+            ta.style.left = '-1000px';
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            var ok = document.execCommand('copy');
+            document.body.removeChild(ta);
+            return ok;
+        } catch (e) { return false; }
+    }
+
+    // ---------------- RENDER PRODUCTS ----------------
+    function renderProducts() {
+        var grid = $('productGrid');
+        if (!grid) return;
+        grid.innerHTML = '';
 
         products.forEach(function (prod) {
-            // Check if this product matches the search
-            var matchesSearch = prod.name.toLowerCase().includes(query);
+            var card = document.createElement('div');
+            card.className = 'card' + (prod.stock === 'out' ? ' out-of-stock' : '');
+            var stockLabel = prod.stock === 'in' ? '✅ In stock' : '⛔ Out of stock';
+            var buyDisabled = prod.stock === 'out' ? ' disabled' : '';
+            var buyBtnClass = prod.stock === 'out' ? 'buy-btn disabled' : 'buy-btn';
+            var orderMsg = encodeURIComponent('Hi SETTI GARI MARKET, I\'d like to order: ' + prod.name + ' (' + CURRENCY + prod.price + '/kg). Is it available?');
+            var waLink = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + orderMsg;
+            var imgHTML = prod.image
+                ? '<img src="' + escapeHTML(prod.image) + '" alt="' + escapeHTML(prod.name) + '">'
+                : escapeHTML(prod.emoji) + ' ' + escapeHTML(prod.name.charAt(0));
 
-            if (matchesSearch) {
-                totalVisible++;
-                hasResults[prod.category] = true;
+            card.innerHTML =
+                '<div class="img-placeholder">' + imgHTML + '</div>' +
+                '<h3>' + escapeHTML(prod.name) + '</h3>' +
+                '<div class="price">' + CURRENCY + Number(prod.price).toFixed(0) + ' / kg</div>' +
+                '<div class="stock-badge">' + stockLabel + '</div>' +
+                '<div class="card-actions">' +
+                    '<button type="button" class="' + buyBtnClass + '"' + buyDisabled + ' data-id="' + prod.id + '">Add to Cart</button>' +
+                    '<a href="' + waLink + '" target="_blank" rel="noopener" class="buy-btn whatsapp-btn" style="text-decoration:none;">WhatsApp</a>' +
+                '</div>';
 
-                if (prod.category === 'labour') {
-                    renderLabourCard(prod, $('grid-labour'));
-                } else {
-                    renderNormalCard(prod, $('grid-' + prod.category));
-                }
+            // fallback if remote image fails
+            var imgEl = card.querySelector('.img-placeholder img');
+            if (imgEl) {
+                imgEl.addEventListener('error', function () {
+                    this.parentNode.innerHTML = escapeHTML(prod.emoji) + ' ' + escapeHTML(prod.name.charAt(0));
+                });
             }
+
+            grid.appendChild(card);
         });
 
-        // Hide/Show headers based on results
-        ['vegetable', 'meat', 'tools', 'labour'].forEach(function(cat) {
-            var header = $('header-' + cat);
-            if (hasResults[cat]) {
-                header.classList.add('active');
-            } else {
-                header.classList.remove('active');
-            }
-        });
-
-        // Show "No results" message if nothing matches
-        if (totalVisible === 0) {
-            $('noResults').style.display = 'block';
-        } else {
-            $('noResults').style.display = 'none';
-        }
-    }
-
-    function renderNormalCard(prod, container) {
-        if (!container) return;
-
-        var card = document.createElement('div');
-        card.className = 'card' + (prod.stock === 'out' ? ' out-of-stock' : '');
-        var stockLabel = prod.stock === 'in' ? '✅ In stock' : '⛔ Out of stock';
-        var buyDisabled = prod.stock === 'out' ? ' disabled' : '';
-        var buyBtnClass = prod.stock === 'out' ? 'buy-btn disabled' : 'buy-btn';
-        
-        var orderMsg = encodeURIComponent('Hi SETTI GARI MARKET, I want to order/rent: ' + prod.name + ' (' + CURRENCY + prod.price + '). Is it available?');
-        var waLink = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + orderMsg;
-        var imgHTML = prod.image ? '<img src="' + escapeHTML(prod.image) + '" alt="' + escapeHTML(prod.name) + '">' : escapeHTML(prod.emoji) + ' ' + escapeHTML(prod.name.charAt(0));
-
-        card.innerHTML = 
-            '<div class="img-placeholder">' + imgHTML + '</div>' +
-            '<h3>' + escapeHTML(prod.name) + '</h3>' +
-            '<div class="price">' + CURRENCY + Number(prod.price).toFixed(0) + (prod.category === 'tools' ? ' / hr' : ' / kg') + '</div>' +
-            '<div class="stock-badge">' + stockLabel + '</div>' +
-            '<div class="card-actions">' +
-                '<button type="button" class="' + buyBtnClass + '"' + buyDisabled + ' data-id="' + prod.id + '">Add to Cart</button>' +
-                '<a href="' + waLink + '" target="_blank" rel="noopener" class="buy-btn whatsapp-btn" style="text-decoration:none;">WhatsApp</a>' +
-            '</div>';
-
-        var imgEl = card.querySelector('.img-placeholder img');
-        if (imgEl) { imgEl.addEventListener('error', function () { this.parentNode.innerHTML = escapeHTML(prod.emoji) + ' ' + escapeHTML(prod.name.charAt(0)); }); }
-
-        var buyBtn = card.querySelector('.buy-btn');
-        if (buyBtn) {
-            buyBtn.addEventListener('click', function () {
-                if (prod.stock === 'out') return;
-                var msg = encodeURIComponent('Hi SETTI GARI MARKET, I want to order/rent: ' + prod.name + ' (Price: ' + CURRENCY + prod.price). Cash on delivery.');
+        Array.prototype.forEach.call(document.querySelectorAll('.buy-btn[data-id]'), function (btn) {
+            if (btn.classList.contains('disabled')) return;
+            btn.addEventListener('click', function (e) {
+                var id = e.currentTarget.getAttribute('data-id');
+                var prod = products.filter(function (p) { return p.id === id; })[0];
+                if (!prod) return;
+                var msg = encodeURIComponent('Hi SETTI GARI MARKET, I\'d like to order: ' + prod.name + ' (' + CURRENCY + prod.price + '/kg). Cash on delivery.');
                 window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + msg, '_blank');
             });
-        }
-
-        container.appendChild(card);
-    }
-
-    function renderLabourCard(prod, container) {
-        if (!container) return;
-
-        var card = document.createElement('div');
-        card.className = 'card labour-card';
-        
-        card.innerHTML = 
-            '<div class="img-placeholder" style="background:#fbc02d; color:#fff;">' + escapeHTML(prod.emoji) + '</div>' +
-            '<h3>' + escapeHTML(prod.name) + '</h3>' +
-            '<div class="price">' + CURRENCY + prod.hourlyRate + ' / hour per person</div>' +
-            '<div class="stock-badge" style="background:#fff; border:1px solid #fbc02d;">✅ Available</div>' +
-            
-            '<div class="labour-controls">' +
-                '<div>' +
-                    '<label>Number of People:</label>' +
-                    '<input type="number" id="qty-' + prod.id + '" min="1" value="1">' +
-                '</div>' +
-                '<div>' +
-                    '<label>Hours Needed:</label>' +
-                    '<input type="number" id="hrs-' + prod.id + '" min="1" value="4">' +
-                '</div>' +
-                '<div class="labour-total" id="total-' + prod.id + '">Total: ' + CURRENCY + (prod.hourlyRate * 4) + '</div>' +
-            '</div>' +
-
-            '<div class="card-actions">' +
-                '<button type="button" class="buy-btn" id="btn-' + prod.id + '" style="background:#d32f2f;">Book via WhatsApp</button>' +
-            '</div>';
-
-        container.appendChild(card);
-
-        var qtyInput = card.querySelector('#qty-' + prod.id);
-        var hrsInput = card.querySelector('#hrs-' + prod.id);
-        var totalDisplay = card.querySelector('#total-' + prod.id);
-        var bookBtn = card.querySelector('#btn-' + prod.id);
-
-        function updateTotal() {
-            var q = parseInt(qtyInput.value) || 1;
-            var h = parseInt(hrsInput.value) || 1;
-            totalDisplay.textContent = 'Total: ' + CURRENCY + (q * h * prod.hourlyRate);
-        }
-
-        qtyInput.addEventListener('input', updateTotal);
-        hrsInput.addEventListener('input', updateTotal);
-
-        bookBtn.addEventListener('click', function () {
-            var q = parseInt(qtyInput.value) || 1;
-            var h = parseInt(hrsInput.value) || 1;
-            var total = q * h * prod.hourlyRate;
-            var msg = encodeURIComponent('Hi SETTI GARI MARKET, I want to book Labour.\n\n' +
-                'Type: ' + prod.name + '\n' +
-                'Number of People: ' + q + '\n' +
-                'Hours: ' + h + '\n' +
-                'Total Cost: ' + CURRENCY + total + ' (Cash on delivery)');
-            window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + msg, '_blank');
         });
     }
 
-    // ==========================================
-    // SHARE & LINKS
-    // ==========================================
-    function setupLinks() {
-        if ($('whatsappMainLink')) {
-            $('whatsappMainLink').href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent('Hello SETTI GARI MARKET! I would like to place an order.');
+    // ---------------- RENDER ADMIN LIST ----------------
+    function renderAdminProductList() {
+        var container = $('productAdminList');
+        if (!container) return;
+        container.innerHTML = '';
+
+        if (!isAdminLoggedIn) {
+            container.innerHTML = '<p style="color:#8aa88a;">Login to manage items.</p>';
+            return;
         }
-        
-        if ($('shareWebsiteLink')) {
-            $('shareWebsiteLink').addEventListener('click', function () {
-                var url = window.location.href.split('#')[0];
-                if (navigator.share) {
-                    navigator.share({ title: 'SETTI GARI MARKET', url: url }).catch(function(){});
+
+        products.forEach(function (prod) {
+            var row = document.createElement('div');
+            row.className = 'product-admin-row';
+
+            var info = document.createElement('div');
+            info.className = 'prod-info';
+            info.innerHTML = '<strong>' + escapeHTML(prod.emoji) + ' ' + escapeHTML(prod.name) + '</strong><span>ID: ' + prod.id + '</span>';
+
+            var priceInput = document.createElement('input');
+            priceInput.type = 'number'; priceInput.min = '1'; priceInput.step = '1';
+            priceInput.value = prod.price;
+            priceInput.style.width = '80px';
+            priceInput.title = 'Price';
+
+            var stockSelect = document.createElement('select');
+            stockSelect.style.width = '120px';
+            stockSelect.innerHTML = '<option value="in">✅ In stock</option><option value="out">⛔ Out of stock</option>';
+            stockSelect.value = prod.stock;
+
+            var imgInput = document.createElement('input');
+            imgInput.type = 'text';
+            imgInput.placeholder = 'Image URL';
+            imgInput.value = prod.image || '';
+            imgInput.style.width = '140px';
+
+            var actions = document.createElement('div');
+            actions.className = 'actions';
+
+            var updateBtn = document.createElement('button');
+            updateBtn.type = 'button';
+            updateBtn.className = 'btn-small';
+            updateBtn.textContent = '💾 Save';
+            updateBtn.addEventListener('click', function () {
+                var priceVal = parseFloat(priceInput.value);
+                if (isNaN(priceVal) || priceVal <= 0) {
+                    alert('Price must be a number greater than 0.');
+                    return;
+                }
+                prod.price = priceVal;
+                prod.stock = stockSelect.value;
+                prod.image = imgInput.value.trim();
+                renderProducts();
+                renderAdminProductList();
+                var msg = $('adminMessage');
+                if (msg) { msg.textContent = '✅ "' + prod.name + '" updated.'; setTimeout(function () { msg.textContent = ''; }, 2500); }
+            });
+
+            var deleteBtn = document.createElement('button');
+            deleteBtn.type = 'button';
+            deleteBtn.className = 'btn-small btn-danger';
+            deleteBtn.textContent = '🗑️ Delete';
+            deleteBtn.addEventListener('click', function () {
+                if (!confirm('Delete "' + prod.name + '"?')) return;
+                products = products.filter(function (x) { return x.id !== prod.id; });
+                renderProducts();
+                renderAdminProductList();
+                var msg = $('adminMessage');
+                if (msg) { msg.textContent = '🗑️ "' + prod.name + '" deleted.'; setTimeout(function () { msg.textContent = ''; }, 2500); }
+            });
+
+            actions.appendChild(updateBtn);
+            actions.appendChild(deleteBtn);
+
+            row.appendChild(info);
+            row.appendChild(priceInput);
+            row.appendChild(stockSelect);
+            row.appendChild(imgInput);
+            row.appendChild(actions);
+            container.appendChild(row);
+        });
+    }
+
+    // ---------------- ADMIN LOGIN ----------------
+    function setupAdminLogin() {
+        var loginCard = $('loginCard');
+        var dashboard = $('adminDashboard');
+        var loginBtn = $('loginBtn');
+        var passwordInput = $('adminPassword');
+        var loginMessage = $('loginMessage');
+        var logoutBtn = $('logoutBtn');
+
+        function showDashboard() {
+            isAdminLoggedIn = true;
+            loginCard.style.display = 'none';
+            dashboard.classList.add('active');
+            renderAdminProductList();
+            var nav = $('adminNavLink');
+            if (nav) { nav.textContent = 'Admin Dashboard'; nav.href = '#adminSection'; }
+        }
+
+        function showLogin() {
+            isAdminLoggedIn = false;
+            loginCard.style.display = 'block';
+            dashboard.classList.remove('active');
+            passwordInput.value = '';
+            loginMessage.textContent = '';
+            renderAdminProductList();
+            var nav = $('adminNavLink');
+            if (nav) { nav.textContent = 'Admin'; nav.href = '#adminSection'; }
+        }
+
+        loginBtn.addEventListener('click', function () {
+            if (passwordInput.value.trim() === ADMIN_PASSWORD) {
+                loginMessage.textContent = '';
+                showDashboard();
+            } else {
+                loginMessage.textContent = '❌ Incorrect password. Please try again.';
+                passwordInput.value = '';
+            }
+        });
+
+        passwordInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') loginBtn.click();
+        });
+
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function () {
+                showLogin();
+                var msg = $('adminMessage'); if (msg) msg.textContent = '';
+            });
+        }
+
+        showLogin();
+    }
+
+    // ---------------- ADD ITEM ----------------
+    function setupAddItem() {
+        var addBtn = $('addItemBtn');
+        if (!addBtn) return;
+
+        addBtn.addEventListener('click', function () {
+            if (!isAdminLoggedIn) { alert('Please login as admin first.'); return; }
+
+            var name = $('itemName').value.trim();
+            var priceRaw = $('itemPrice').value.trim();
+            var emoji = ($('itemEmoji').value.trim() || '🥬').slice(0, 4);
+            var stock = $('itemStock').value;
+            var image = $('itemImage').value.trim();
+
+            if (!name) { $('adminMessage').textContent = '❌ Please enter an item name.'; return; }
+            var price = parseFloat(priceRaw);
+            if (!priceRaw || isNaN(price) || price <= 0) { $('adminMessage').textContent = '❌ Please enter a valid price greater than 0.'; return; }
+
+            products.push({ id: 'p' + Date.now(), name: name, price: price, emoji: emoji, stock: stock, image: image });
+
+            $('itemName').value = '';
+            $('itemPrice').value = '';
+            $('itemEmoji').value = '🥬';
+            $('itemStock').value = 'in';
+            $('itemImage').value = '';
+
+            renderProducts();
+            renderAdminProductList();
+            $('adminMessage').textContent = '✅ "' + name + '" added successfully.';
+            setTimeout(function () { $('adminMessage').textContent = ''; }, 3000);
+        });
+    }
+
+    // ---------------- WHATSAPP MAIN BUTTON ----------------
+    function setupWhatsAppButton() {
+        var waMain = $('whatsappMainLink');
+        if (!waMain) return;
+        var msg = encodeURIComponent('Hello SETTI GARI MARKET! I would like to place an order for fresh vegetables. Please share availability and total. (Cash on delivery)');
+        waMain.href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + msg;
+    }
+
+    // ---------------- SHARE BUTTON ----------------
+    function setupShareButton() {
+        var btn = $('shareWebsiteLink');
+        if (!btn) return;
+
+        btn.addEventListener('click', function () {
+            var pageUrl = window.location.href;
+            try { var u = new URL(pageUrl); u.hash = ''; pageUrl = u.toString(); } catch (e) {}
+
+            var shareText = 'SETTI GARI MARKET – Farm fresh vegetables, delivered daily! Order on WhatsApp (Cash on Delivery). Website: ' + pageUrl;
+            var shareData = { title: 'SETTI GARI MARKET – Fresh Vegetables', text: 'Order farm fresh vegetables via WhatsApp. Cash on delivery.', url: pageUrl };
+
+            // Try native share first (only if available AND URL is public)
+            if (navigator.share && isPublicUrl(pageUrl)) {
+                navigator.share(shareData).catch(function () {
+                    // fall through to copy+alert below
+                });
+                return;
+            }
+
+            // Always copy the link locally so user can paste it
+            copyText(shareText).then(function (ok) {
+                var note;
+                if (isPublicUrl(pageUrl)) {
+                    note = '✅ Link copied to clipboard.\n\nYou can now paste it in WhatsApp, SMS, or any app to share.';
                 } else {
-                    navigator.clipboard.writeText(url).then(function() {
-                        alert('✅ Link copied! You can share it now.');
-                    });
+                    note = '✅ Link copied to clipboard.\n\n⚠️ Note: this site is running on a LOCAL address (' + pageUrl + ').\n\nTo let customers open it, upload the file to a public host (Netlify, GitHub Pages, Vercel, or your own domain). The shared link will then work everywhere.';
+                }
+                if (!ok) {
+                    window.prompt('Copy this link and share it:', pageUrl);
+                } else {
+                    alert(note);
                 }
             });
-        }
+        });
     }
 
+    // ---------------- QR CODE ----------------
     function setupQRCode() {
-        if (!$('qrContainer') || !$('websiteQR')) return;
+        var qrImg = $('websiteQR');
+        var container = $('qrContainer');
+        var caption = $('qrCaption');
+        if (!qrImg || !container) return;
 
-        var pageUrl = window.location.href.split('#')[0];
-        var isLocal = pageUrl.includes('127.0.0.1') || pageUrl.includes('localhost');
-        
-        if (isLocal) {
-            $('qrContainer').innerHTML = '<div class="qr-placeholder">📱<br>QR code available<br>once hosted online</div>';
-        } else {
-            $('websiteQR').src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&margin=6&data=' + encodeURIComponent(pageUrl);
+        var pageUrl = window.location.href;
+        try { var u = new URL(pageUrl); u.hash = ''; pageUrl = u.toString(); } catch (e) {}
+
+        if (!isPublicUrl(pageUrl)) {
+            container.innerHTML = '<div class="qr-placeholder">📱<br>QR code available<br>once the site is hosted<br>on a public URL</div>';
+            if (caption) caption.textContent = 'Current: ' + pageUrl;
+            return;
         }
+
+        var qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&margin=6&data=' + encodeURIComponent(pageUrl);
+        qrImg.src = qrUrl;
+        qrImg.alt = 'QR code for SETTI GARI MARKET website';
+        qrImg.addEventListener('error', function () {
+            container.innerHTML = '<div class="qr-placeholder">📱<br>QR code unavailable<br>Please check connection</div>';
+            if (caption) caption.textContent = 'Visit: ' + pageUrl;
+        });
     }
 
-    // Init
-    window.addEventListener('DOMContentLoaded', function () {
-        // Initial render with no search filter
-        renderProducts('');
+    // ---------------- BOOTSTRAP ----------------
+    function init() {
+        try { renderProducts(); } catch (e) { console.error('renderProducts', e); }
+        try { renderAdminProductList(); } catch (e) { console.error('renderAdminProductList', e); }
+        try { setupAdminLogin(); } catch (e) { console.error('setupAdminLogin', e); }
+        try { setupAddItem(); } catch (e) { console.error('setupAddItem', e); }
+        try { setupWhatsAppButton(); } catch (e) { console.error('setupWhatsAppButton', e); }
+        try { setupShareButton(); } catch (e) { console.error('setupShareButton', e); }
+        try { setupQRCode(); } catch (e) { console.error('setupQRCode', e); }
+    }
 
-        // Add event listener to the search bar
-        var searchInput = $('searchBar');
-        if (searchInput) {
-            searchInput.addEventListener('input', function(e) {
-                renderProducts(e.target.value);
-            });
-        }
-
-        try { setupLinks(); } catch(e) { console.error(e); }
-        try { setupQRCode(); } catch(e) { console.error(e); }
-    });
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
 })();
 </script>
 </body>
