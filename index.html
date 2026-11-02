@@ -87,7 +87,7 @@
 
     <!-- VEGETABLES -->
     <h3 class="category-header">🥦 Vegetables</h3>
-    <div id="grid-vegetables" class="grid"></div>
+    <div id="grid-vegetable" class="grid"></div>
 
     <!-- MEAT -->
     <h3 class="category-header">🍗 Meat & Poultry</h3>
@@ -148,10 +148,10 @@
     // PRODUCT DATA (Grouped by Category)
     // ==========================================
     var products = [
-        // Vegetables
-        { id: 'v1', category: 'vegetables', name: 'Organic Tomatoes', price: 49, emoji: '🍅', stock: 'in', image: '' },
-        { id: 'v2', category: 'vegetables', name: 'Fresh Broccoli', price: 89, emoji: '🥦', stock: 'in', image: '' },
-        { id: 'v3', category: 'vegetables', name: 'Green Chillies', price: 25, emoji: '🌶️', stock: 'in', image: '' },
+        // Vegetables (category must be 'vegetable' to match the HTML ID)
+        { id: 'v1', category: 'vegetable', name: 'Organic Tomatoes', price: 49, emoji: '🍅', stock: 'in', image: '' },
+        { id: 'v2', category: 'vegetable', name: 'Fresh Broccoli', price: 89, emoji: '🥦', stock: 'in', image: '' },
+        { id: 'v3', category: 'vegetable', name: 'Green Chillies', price: 25, emoji: '🌶️', stock: 'in', image: '' },
         
         // Meat
         { id: 'm1', category: 'meat', name: 'Natukode (Country Chicken)', price: 600, emoji: '🐓', stock: 'in', image: '' },
@@ -176,7 +176,7 @@
     // ==========================================
     function renderProducts() {
         // Clear all grids
-        $('grid-vegetables').innerHTML = '';
+        $('grid-vegetable').innerHTML = '';
         $('grid-meat').innerHTML = '';
         $('grid-tools').innerHTML = '';
         $('grid-labour').innerHTML = '';
@@ -193,6 +193,8 @@
     }
 
     function renderNormalCard(prod, container) {
+        if (!container) return; // Safety check
+
         var card = document.createElement('div');
         card.className = 'card' + (prod.stock === 'out' ? ' out-of-stock' : '');
         var stockLabel = prod.stock === 'in' ? '✅ In stock' : '⛔ Out of stock';
@@ -217,22 +219,24 @@
         if (imgEl) { imgEl.addEventListener('error', function () { this.parentNode.innerHTML = escapeHTML(prod.emoji) + ' ' + escapeHTML(prod.name.charAt(0)); }); }
 
         // Add to cart click
-        card.querySelector('.buy-btn').addEventListener('click', function () {
-            if (prod.stock === 'out') return;
-            var msg = encodeURIComponent('Hi SETTI GARI MARKET, I want to order/rent: ' + prod.name + ' (Price: ' + CURRENCY + prod.price). Cash on delivery.');
-            window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + msg, '_blank');
-        });
+        var buyBtn = card.querySelector('.buy-btn');
+        if (buyBtn) {
+            buyBtn.addEventListener('click', function () {
+                if (prod.stock === 'out') return;
+                var msg = encodeURIComponent('Hi SETTI GARI MARKET, I want to order/rent: ' + prod.name + ' (Price: ' + CURRENCY + prod.price). Cash on delivery.');
+                window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + msg, '_blank');
+            });
+        }
 
         container.appendChild(card);
     }
 
     function renderLabourCard(prod, container) {
+        if (!container) return;
+
         var card = document.createElement('div');
         card.className = 'card labour-card';
         
-        var orderMsg = encodeURIComponent('Hi SETTI GARI MARKET, I need ' + prod.type + ' labour. Please confirm availability.');
-        var waLink = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + orderMsg;
-
         card.innerHTML = 
             '<div class="img-placeholder" style="background:#fbc02d; color:#fff;">' + escapeHTML(prod.emoji) + '</div>' +
             '<h3>' + escapeHTML(prod.name) + '</h3>' +
@@ -290,21 +294,27 @@
     // SHARE & LINKS
     // ==========================================
     function setupLinks() {
-        $('whatsappMainLink').href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent('Hello SETTI GARI MARKET! I would like to place an order.');
+        if ($('whatsappMainLink')) {
+            $('whatsappMainLink').href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent('Hello SETTI GARI MARKET! I would like to place an order.');
+        }
         
-        $('shareWebsiteLink').addEventListener('click', function () {
-            var url = window.location.href.split('#')[0];
-            if (navigator.share) {
-                navigator.share({ title: 'SETTI GARI MARKET', url: url }).catch(function(){});
-            } else {
-                navigator.clipboard.writeText(url).then(function() {
-                    alert('✅ Link copied! You can share it now.');
-                });
-            }
-        });
+        if ($('shareWebsiteLink')) {
+            $('shareWebsiteLink').addEventListener('click', function () {
+                var url = window.location.href.split('#')[0];
+                if (navigator.share) {
+                    navigator.share({ title: 'SETTI GARI MARKET', url: url }).catch(function(){});
+                } else {
+                    navigator.clipboard.writeText(url).then(function() {
+                        alert('✅ Link copied! You can share it now.');
+                    });
+                }
+            });
+        }
     }
 
     function setupQRCode() {
+        if (!$('qrContainer') || !$('websiteQR')) return;
+
         var pageUrl = window.location.href.split('#')[0];
         var isLocal = pageUrl.includes('127.0.0.1') || pageUrl.includes('localhost');
         
@@ -317,9 +327,9 @@
 
     // Init
     window.addEventListener('DOMContentLoaded', function () {
-        renderProducts();
-        setupLinks();
-        setupQRCode();
+        try { renderProducts(); } catch(e) { console.error(e); }
+        try { setupLinks(); } catch(e) { console.error(e); }
+        try { setupQRCode(); } catch(e) { console.error(e); }
     });
 })();
 </script>
