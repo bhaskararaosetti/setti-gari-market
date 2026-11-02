@@ -16,7 +16,7 @@
         .nav-links a:hover { color: #1f7b2e; }
 
         section { max-width: 1200px; margin: 0 auto; padding: 55px 20px; }
-        .section-title { text-align: center; font-size: 2.1rem; color: #0f2b0f; margin-bottom: 35px; font-weight: 650; }
+        .section-title { text-align: center; font-size: 2.1rem; color: #0f2b0f; margin-bottom: 20px; font-weight: 650; }
 
         #home { background: linear-gradient(105deg, #1f7b2e 0%, #3a9f4a 100%); color: white; text-align: center; padding: 80px 20px; border-radius: 0 0 28px 28px; margin-bottom: 20px; }
         #home h1 { font-size: 3rem; font-weight: 700; margin-bottom: 12px; }
@@ -24,7 +24,13 @@
         .cta-btn { display: inline-block; background: white; color: #1f7b2e; padding: 12px 34px; text-decoration: none; font-weight: 700; border-radius: 40px; box-shadow: 0 8px 20px rgba(0,0,0,0.12); transition: all 0.2s; font-size: 1.1rem; margin-bottom: 15px; }
         .cta-btn:hover { transform: translateY(-3px); }
 
-        .category-header { font-size: 1.8rem; color: #1f7b2e; margin: 40px 0 20px; border-bottom: 2px solid #cbdccb; padding-bottom: 10px; }
+        /* Search Bar Styles */
+        .search-container { max-width: 600px; margin: 0 auto 40px auto; position: relative; }
+        .search-input { width: 100%; padding: 16px 24px; font-size: 1.1rem; border: 2px solid #cbdccb; border-radius: 40px; outline: none; transition: border-color 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .search-input:focus { border-color: #1f7b2e; }
+
+        .category-header { font-size: 1.8rem; color: #1f7b2e; margin: 40px 0 20px; border-bottom: 2px solid #cbdccb; padding-bottom: 10px; display: none; /* Hidden by default until items are found */ }
+        .category-header.active { display: block; }
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-bottom: 30px; }
         .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 22px rgba(0,30,0,0.06); transition: transform 0.15s; padding-bottom: 22px; display: flex; flex-direction: column; }
@@ -40,7 +46,6 @@
         .whatsapp-btn { background: white; color: #1f7b2e; border: 1px solid #1f7b2e; }
         .whatsapp-btn:hover { background: #f0f7f0; }
 
-        /* Labour Card specific */
         .labour-card { background: #fffde7; border: 2px solid #fbc02d; }
         .labour-controls { padding: 0 16px; margin-bottom: 15px; display: flex; flex-direction: column; gap: 10px; }
         .labour-controls label { font-size: 0.9rem; font-weight: 600; color: #5d4037; }
@@ -85,21 +90,29 @@
 <section id="products">
     <h2 class="section-title">Our Catalogue</h2>
 
+    <!-- NEW: Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchBar" class="search-input" placeholder="🔍 Type to search for vegetables, meat, tools...">
+    </div>
+
     <!-- VEGETABLES -->
-    <h3 class="category-header">🥦 Vegetables</h3>
+    <h3 class="category-header active" id="header-vegetable">🥦 Vegetables</h3>
     <div id="grid-vegetable" class="grid"></div>
 
     <!-- MEAT -->
-    <h3 class="category-header">🍗 Meat & Poultry</h3>
+    <h3 class="category-header active" id="header-meat">🍗 Meat & Poultry</h3>
     <div id="grid-meat" class="grid"></div>
 
     <!-- TOOLS -->
-    <h3 class="category-header">🛠️ Work Instruments (For Rent)</h3>
+    <h3 class="category-header active" id="header-tools">🛠️ Work Instruments (For Rent)</h3>
     <div id="grid-tools" class="grid"></div>
 
     <!-- LABOUR -->
-    <h3 class="category-header">👷 Labour Services</h3>
+    <h3 class="category-header active" id="header-labour">👷 Labour Services</h3>
     <div id="grid-labour" class="grid"></div>
+    
+    <!-- Empty State Message -->
+    <p id="noResults" style="text-align: center; font-size: 1.2rem; color: #6b8a6b; display: none; margin: 40px 0;">No items found matching your search.</p>
 </section>
 
 <section id="supplier">
@@ -144,11 +157,8 @@
     var WHATSAPP_NUMBER = '918465841278';
     var CURRENCY = '₹';
 
-    // ==========================================
-    // PRODUCT DATA (Grouped by Category)
-    // ==========================================
     var products = [
-        // Vegetables (category must be 'vegetable' to match the HTML ID)
+        // Vegetables
         { id: 'v1', category: 'vegetable', name: 'Organic Tomatoes', price: 49, emoji: '🍅', stock: 'in', image: '' },
         { id: 'v2', category: 'vegetable', name: 'Fresh Broccoli', price: 89, emoji: '🥦', stock: 'in', image: '' },
         { id: 'v3', category: 'vegetable', name: 'Green Chillies', price: 25, emoji: '🌶️', stock: 'in', image: '' },
@@ -157,7 +167,7 @@
         { id: 'm1', category: 'meat', name: 'Natukode (Country Chicken)', price: 600, emoji: '🐓', stock: 'in', image: '' },
         { id: 'm2', category: 'meat', name: 'Mutton (Goat)', price: 750, emoji: '🐐', stock: 'in', image: '' },
         
-        // Tools (For Rent)
+        // Tools
         { id: 't1', category: 'tools', name: 'Crowbar (Rent/hr)', price: 50, emoji: '⚒️', stock: 'in', image: '' },
         { id: 't2', category: 'tools', name: 'Pick Mattock (Rent/hr)', price: 40, emoji: '⛏️', stock: 'in', image: '' },
         { id: 't3', category: 'tools', name: 'Shovel (Rent/hr)', price: 30, emoji: '🪏', stock: 'in', image: '' },
@@ -172,28 +182,63 @@
     function escapeHTML(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
 
     // ==========================================
-    // RENDER PRODUCTS BY CATEGORY
+    // RENDER PRODUCTS WITH SEARCH FILTER
     // ==========================================
-    function renderProducts() {
+    function renderProducts(searchQuery) {
+        // Convert search to lowercase for matching
+        var query = (searchQuery || '').toLowerCase().trim();
+
         // Clear all grids
         $('grid-vegetable').innerHTML = '';
         $('grid-meat').innerHTML = '';
         $('grid-tools').innerHTML = '';
         $('grid-labour').innerHTML = '';
 
+        var hasResults = {
+            vegetable: false,
+            meat: false,
+            tools: false,
+            labour: false
+        };
+
+        var totalVisible = 0;
+
         products.forEach(function (prod) {
-            if (prod.category === 'labour') {
-                // Special render for Labour (Needs Inputs)
-                renderLabourCard(prod, $('grid-labour'));
-            } else {
-                // Normal render for Products
-                renderNormalCard(prod, $('grid-' + prod.category));
+            // Check if this product matches the search
+            var matchesSearch = prod.name.toLowerCase().includes(query);
+
+            if (matchesSearch) {
+                totalVisible++;
+                hasResults[prod.category] = true;
+
+                if (prod.category === 'labour') {
+                    renderLabourCard(prod, $('grid-labour'));
+                } else {
+                    renderNormalCard(prod, $('grid-' + prod.category));
+                }
             }
         });
+
+        // Hide/Show headers based on results
+        ['vegetable', 'meat', 'tools', 'labour'].forEach(function(cat) {
+            var header = $('header-' + cat);
+            if (hasResults[cat]) {
+                header.classList.add('active');
+            } else {
+                header.classList.remove('active');
+            }
+        });
+
+        // Show "No results" message if nothing matches
+        if (totalVisible === 0) {
+            $('noResults').style.display = 'block';
+        } else {
+            $('noResults').style.display = 'none';
+        }
     }
 
     function renderNormalCard(prod, container) {
-        if (!container) return; // Safety check
+        if (!container) return;
 
         var card = document.createElement('div');
         card.className = 'card' + (prod.stock === 'out' ? ' out-of-stock' : '');
@@ -218,7 +263,6 @@
         var imgEl = card.querySelector('.img-placeholder img');
         if (imgEl) { imgEl.addEventListener('error', function () { this.parentNode.innerHTML = escapeHTML(prod.emoji) + ' ' + escapeHTML(prod.name.charAt(0)); }); }
 
-        // Add to cart click
         var buyBtn = card.querySelector('.buy-btn');
         if (buyBtn) {
             buyBtn.addEventListener('click', function () {
@@ -261,7 +305,6 @@
 
         container.appendChild(card);
 
-        // Setup live price calculator
         var qtyInput = card.querySelector('#qty-' + prod.id);
         var hrsInput = card.querySelector('#hrs-' + prod.id);
         var totalDisplay = card.querySelector('#total-' + prod.id);
@@ -276,7 +319,6 @@
         qtyInput.addEventListener('input', updateTotal);
         hrsInput.addEventListener('input', updateTotal);
 
-        // Book button click
         bookBtn.addEventListener('click', function () {
             var q = parseInt(qtyInput.value) || 1;
             var h = parseInt(hrsInput.value) || 1;
@@ -327,7 +369,17 @@
 
     // Init
     window.addEventListener('DOMContentLoaded', function () {
-        try { renderProducts(); } catch(e) { console.error(e); }
+        // Initial render with no search filter
+        renderProducts('');
+
+        // Add event listener to the search bar
+        var searchInput = $('searchBar');
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                renderProducts(e.target.value);
+            });
+        }
+
         try { setupLinks(); } catch(e) { console.error(e); }
         try { setupQRCode(); } catch(e) { console.error(e); }
     });
